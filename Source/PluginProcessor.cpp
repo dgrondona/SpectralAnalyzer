@@ -183,6 +183,16 @@ void SpectralAnalyzerAudioProcessor::setStateInformation (const void* data, int 
     // whose contents will have been created by the getStateInformation() call.
 }
 
+juce::AudioProcessorValueTreeState::ParameterLayout SpectralAnalyzerAudioProcessor::createParameterLayout() {
+
+    juce::AudioProcessorValueTreeState::ParameterLayout layout;
+
+    layout.add(std::make_unique<juce::AudioParameterFloat>("Gain", "Gain", juce::NormalisableRange<float>(-12.f, 12.f), 0.01f, 1.f, 0.f));
+
+    return layout;
+
+}
+
 //==============================================================================
 // This creates new instances of the plugin..
 juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
