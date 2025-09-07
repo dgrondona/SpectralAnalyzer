@@ -183,6 +183,7 @@ void SpectralAnalyzerAudioProcessor::setStateInformation (const void* data, int 
     // whose contents will have been created by the getStateInformation() call.
 }
 
+// Use this to make value controls.
 juce::AudioProcessorValueTreeState::ParameterLayout SpectralAnalyzerAudioProcessor::createParameterLayout() {
 
     juce::AudioProcessorValueTreeState::ParameterLayout layout;
